@@ -2,7 +2,7 @@
 <html>
     <head lang="en">
         <title>API Sensor</title>
-        <link rel = "stylesheet" href = "style.css">
+
           <!-- CSS only -->
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
           
@@ -17,6 +17,7 @@
       }
       </style>
     <script>
+// <!-- ########################################################## code ส่วนของการดึงข้อมูลมาจาก server   ############################################################## -->
             document.addEventListener('DOMContentLoaded',function (){           
                 fetch('https://midterm-exam-010723313-2022.herokuapp.com/device?sensor_type=temperature-transducer')
                 .then(response => response.json())
@@ -27,23 +28,24 @@
                         const range0 = dataTT[0].range;
                         const ps0 = dataTT[0]["plant-site"];
                         const value0 = dataTT[0].value;
-                        document.querySelector('#result0').innerHTML = `NAME : ${name0}<br>TYPE : ${type0}<br>UNIT : ${unit0}<br>RANGE : ${range0}<br>PLANT-SITE : ${ps0}<br>VALUE : ${value0}`;
-                    
+                        document.querySelector('#result0').innerHTML = `NAME : ${name0}<br>TYPE : ${type0}<br>UNIT : ${unit0}<br>
+                        RANGE : ${range0}<br>PLANT-SITE : ${ps0}<br>VALUE : ${value0}`;
                         const name1 = dataTT[1].name;
                         const type1 = dataTT[1].type;
                         const unit1 = dataTT[1].unit;
                         const range1 = dataTT[1].range;
                         const ps1 = dataTT[1]["plant-site"];
                         const value1 = dataTT[1].value;
-                        document.querySelector('#result1').innerHTML = `NAME : ${name1}<br>TYPE : ${type1}<br>UNIT : ${unit1}<br>RANGE : ${range1}<br>PLANT-SITE : ${ps1}<br>VALUE : ${value1}`;
-                    
+                        document.querySelector('#result1').innerHTML = `NAME : ${name1}<br>TYPE : ${type1}<br>UNIT : ${unit1}<br>
+                        RANGE : ${range1}<br>PLANT-SITE : ${ps1}<br>VALUE : ${value1}`;
                         const name2 = dataTT[2].name;
                         const type2 = dataTT[2].type;
                         const unit2 = dataTT[2].unit;
                         const range2 = dataTT[2].range;
                         const ps2 = dataTT[2]["plant-site"];
                         const value2 = dataTT[2].value;
-                        document.querySelector('#result2').innerHTML = `NAME : ${name2}<br>TYPE : ${type2}<br>UNIT : ${unit2}<br>RANGE : ${range2}<br>PLANT-SITE : ${ps2}<br>VALUE : ${value2}`;
+                        document.querySelector('#result2').innerHTML = `NAME : ${name2}<br>TYPE : ${type2}<br>UNIT : ${unit2}<br>
+                        RANGE : ${range2}<br>PLANT-SITE : ${ps2}<br>VALUE : ${value2}`;
                     })
                     .catch(error => {
                     console.log('Error:', error);
@@ -52,6 +54,7 @@
             });
     </script>
 <body>
+<!-- ########################################################## ข้อมูลตกแต่งส่วนหัวของเว็ปไซค์  ############################################################## -->
   <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-bg-dark">
     <h2 class="mx-4 my-1" style="font-family:'Copperplate, Papyrus, fantasy'">TEMPERATURE TRANSDUCER</h2>
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">        
@@ -64,6 +67,7 @@
         <li class="nav-item"><a href="PT.html" class="btn btn-light text-dark me-2">PRESSURE TRANSDUCER</a></li>
       </ul>
     </header>
+<!-- ########################################################## ข้อมูลหลังจากที่ดึงข้อมูลจาก server มาแสดงผล  ############################################################## -->
     <c>
       <div class="row my-4 mx-3 justify-content-center">
         <div class="col-12 col-md-6 col-lg-3 ">
